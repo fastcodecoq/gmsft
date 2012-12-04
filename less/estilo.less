@@ -486,17 +486,21 @@ width: 100%;
 		              				}
 
 
-		              				button{
+		              				a,button{
 																	
 										margin-left:-2px;
 										.lft;
 										.fsiz(1.4em);
-										.h(37px);
+										.h(32px);
 										.pad(2px 5px 1px 5px);
 										.curva( 0 2px 2px 0);
 										border:1px solid #ccc;
 										border-left: 1px solid #ebebeb;
-										.col(#666);										
+										.col(#666);	
+										.disp(block);
+										text-decoration: none;		
+										.lh(1.7);	
+										.back(rgba(0, 0, 0, 0.03));						
 
 										&:hover{
 										 
@@ -591,4 +595,179 @@ width: 100%;
 	}
 
 }
+
+
+div#social{
+   
+   .disp(block);
+   .cont;
+   .marginAuto;
+   margin-top: 15px;
+   .posi(relative);
+
+	  ul{
+
+	  		li{
+
+	  			&:last-child{
+
+
+	  				margin-left: 20px;
+
+	  			}
+
+
+	  			h1{
+
+	  					.fsiz(1.5em);
+	 				.disp(table);
+	 				.tlf;
+	 				.back(#CA05C2);
+	 			    .pad(3px 35px 3px 15px);	 
+	 			    .col(white);
+
+	  			}
+
+	  		}
+
+	  }
+
+	  div{
+
+
+	  	  &.flecha{
+
+	 		margin-top: -50px;	  	  	
+	  	 
+
+	  	  	figure{
+
+	  	  		margin: 0;
+	  	  		padding: 0;
+
+	  	   	 a{
+	  	  	
+	  	  		.fsiz(2.7em);
+	  	  		.lh(4);
+	  	  		.disp(table);
+	  	  	 	margin-left: 5px;
+	  	  	 	text-decoration: none;
+	  	  	 	.col(black);
+
+	  	  	   }
+
+
+	  	  	}
+
+	  	  }
+
+	  }
+
+}
+
+
+
+div.pop{
+
+	 .posi(fixed);
+	 left:0;
+	 .w(100%);	
+	 height: 200px;
+	 .pad(20px 0);	 
+	 .zin(100000);	 	 
+	 cursor:default !important;	 
+	 bottom: -1000px;
+	.animar(all 1s); 
+
+	 .wrap{
+
+	 	.dim(600px,100%);
+	 	.marginAuto;	
+
+
+	 	div{
+
+	 		&.popCab{
+
+	 						
+
+	 			h1{
+
+	 				.fsiz(1.8em);
+	 				.disp(table);
+	 				.tlf;
+	 				.back(#CA05C2);
+	 			    .pad(3px 15px 3px 5px);	 
+	 			    .col(white);
+
+	 			}
+
+	 		}
+
+	 		&.popBody{
+
+	 			 .dim(550px,auto);
+	 			 .pad(20px 10px);
+	 			 .lft;
+
+	 			 iframe{
+
+	 			 	.dim(400px,350px);
+
+	 			 }
+	 			 .back(white);
+
+	 			 p{
+
+	 			 	.fsiz(3.1em);
+	 			 	.lh(1);
+	 			 	.tlf;
+
+	 			 }
+
+	 		}
+
+	 		&.popFoot{
+
+                  a[href="#cerrarPop"]{
+	 			    .fsiz(1.8em);	 					 				
+	 				.back(#2E302C);
+	 			    .pad(3px 15px 3px 5px);	 
+	 			    .col(white);
+	 			    .disp(block);
+	 			    .w(40%);
+	 			    .trg;
+	 			    .rgt;
+	 			    margin-right: 29px;
+	 			    text-decoration: none;
+	 			    .animar(all 1s);
+
+	 			    &:hover{
+
+	 			    	.back(#CA05C2);
+
+	 			    }
+
+	 			  }
+
+
+
+	 		}
+
+	 	}
+
+
+	 }
+
+
+}
+
+.fb-like-box{
+
+	.back(white);
+	.lft;
+
+}
+
+
 

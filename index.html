@@ -147,7 +147,10 @@
    	    </div>
 
           <footer>
+             
+
               <div class="wrap cont">
+             
                     <ul>
                         <li>
                             <div class="wrap social">
@@ -175,12 +178,14 @@
                         <li class="news">
                            <div class="wrap noticias">
                               <span>Newsletter</span>
-                              <form action="">
+                              
+                              <form action="" name="news">
                                  <div class="wrap">
-                                 <input type="text" placeholder="@" >
-                                 <button>Suscribirme</button>
+                                 <input type="text" placeholder="@" autocomplete="off" id="correoNews" />
+                                 <a href="#suscribirme">Suscribirme</a>
                                  </div>
                               </form>
+
                            </div>
                         </li>
 
@@ -201,25 +206,103 @@
 
    </div>
 
+     </div>
+
    <div class="wrap mail">
+     
       <figure>
          <img src="img/mail.png" alt="" width="28">
       </figure>
 
      <div class="wrap datos">
+      
       <span>
-         <a href="mailto:info@gomosoft.com">  info@gomosoft.com </div>
+         <a href="mailto:info@gomosoft.com">  info@gomosoft.com </a>
       </span>
+
      </div>
-   </div>
 
    </div>
+
+ 
+
 </li>
 
 
                     </ul>
-              </div>
-          </footer>
+  </div>
+
+<div class="wrap" id="social">
+
+   <ul class="wrap">
+
+    <li class="wrap lft" style="width:390px; height:300px">
+
+    <h1>Facebook</h1>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/gomosoftweb" data-width="390" data-show-faces="true" data-stream="false" data-border-color="#ccc" data-header="false"></div>
+ 
+  </li>
+      
+
+  <li class="wrap " style="width:300px; float:right; margin-right:100px;">
+
+   <h1>Twitter</h1>
+ 
+    <a class="twitter-timeline" href="https://twitter.com/gomosoft" data-widget-id="275855850596335616">Tweets por @gomosoft</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+   
+   </li>
+
+
+
+     </ul>
+
+
+     <div class="wrap flecha">         
+         
+           <figure class="lft"> 
+            <a href="#cerrarFoot">
+               <img src="img/arrow.png" alt="" width="120" class="lft">
+               &nbsp; Volver
+            </a>
+            </figure>
+
+     </div>
+    
+
+  </div>
+
+
+          
+</footer>
+
+   
+
+
+      <div class="pop" id="news">
+          
+          <div class="wrap">
+
+      <div class="popCab ">
+         <h1>Enhorabuena</h1>
+      </div>
+
+      <div class="popBody wrap">
+         
+         <p>Te has registrado para recibir todas nuestras novedades.</p>
+
+      </div>
+
+      <div class="popFoot wrap">
+         <a href="#cerrarPop">Aceptar</a>
+      </div>
+
+     </div>
+
+   </div>
+ 
+      
 
    	     <script type="text/javascript">
          
@@ -227,7 +310,7 @@
 
             </script>  
 
-            <script type="text/javascript">
+ <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-23677861-1']);
@@ -241,6 +324,15 @@
   })();
 
 </script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=427373600657905";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	
    </body>
 
