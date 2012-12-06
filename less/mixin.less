@@ -52,6 +52,39 @@
 
   }
 
+  .rotar{
+  	
+   .animar(all 2s);
+
+ transform: rotate(360deg);
+ -ms-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -webkit-transform: rotate(360deg);
+ -o-transform: rotate(360deg);      
+
+  }
+
+  .rotate(@anim,@fx){
+
+  	  .animar(@anim);
+
+  	  transform: @fx;
+ 	-ms-transform: @fx;
+ 	-moz-transform: @fx;
+ 	-webkit-transform: @fx;
+ 	-o-transform: @fx; 
+
+  }
+
+
+  .rotarPath{
+  	
+   .animar(all 0.5s);
+
+}
+
+
+
  .lft{
       float: left;
       display: block;
@@ -221,3 +254,24 @@
 .zin(@z){
 	  z-index:@z;
  }
+
+ .clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}

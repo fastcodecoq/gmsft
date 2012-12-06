@@ -1,4 +1,18 @@
 @import "mixin.less";
+@import "colores.less";
+
+//un poco de reset *************
+
+
+   figure{
+
+   	 margin:  0;
+   	 padding: 0;
+
+   }
+
+
+// **********************
 
 html{
 
@@ -19,6 +33,7 @@ body{
    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif !important;
     line-height: 1.5;  
     .overHidden;
+    .animar(all 0.5s);
 
  
 }
@@ -81,7 +96,7 @@ header{
 
 
 
-   div.wrap{
+   div.w{
 
    	  .w(960px);
    	  .marginAuto;
@@ -158,7 +173,7 @@ header{
     &::before{
 
 content: '';
-position: fixed;
+position: absolute;
 height: 7px;
 top: 65px;
 left:0;
@@ -179,6 +194,7 @@ div#contenedorP{
 
     .w(100%);
     .overHidden;
+    .posi(relative);
 
      .back(rgba(0, 0, 0, 0.03));
 
@@ -415,7 +431,7 @@ width: 100%;
 
 		 	li{
 
-		 		.w(15%);	
+		 		.w(17%);	
 		 		.lft;	
 		 		.overHidden; 	
 		 		margin: 0 1% 0 1%;	
@@ -604,6 +620,7 @@ div#social{
    .marginAuto;
    margin-top: 15px;
    .posi(relative);
+   padding-bottom: 20px;
 
 	  ul{
 
@@ -615,6 +632,17 @@ div#social{
 	  				margin-left: 20px;
 
 	  			}
+
+	  			&.twitter{
+
+	  	  	  		iframe{
+	  	  	  	 
+
+	  	  	 			 }
+
+	  	  			//  border-bottom:2px solid #ccc;	  	  	  
+
+	  	      }
 
 
 	  			h1{
@@ -632,12 +660,18 @@ div#social{
 
 	  }
 
+
+
 	  div{
 
 
 	  	  &.flecha{
 
-	 		margin-top: -50px;	  	  	
+	  	  	 margin-top: 25px;
+	  	  	 .disp(table);	  	  	 
+	  	  	 .lft;
+	 		//margin: 25px 100px 0 0;	
+	 		//.rgt; 			  	  
 	  	 
 
 	  	  	figure{
@@ -648,23 +682,93 @@ div#social{
 	  	   	 a{
 	  	  	
 	  	  		.fsiz(2.7em);
-	  	  		.lh(4);
+	  	  		.lh(3);
 	  	  		.disp(table);
-	  	  	 	margin-left: 5px;
+	  	  	 	margin-left: 2px;
 	  	  	 	text-decoration: none;
 	  	  	 	.col(black);
+
+	  	  	   }
+
+	  	  	   img{
+
+	  	  	   		margin-right: 8px;
 
 	  	  	   }
 
 
 	  	  	}
 
-	  	  }
+
+	  	  	&.abajo{
+
+	  	  	  			  
+			  bottom:0; 	  	  	  	  	  
+	  	  	  .rgt;
+	  	  	  margin-right: 100px;
+
+	  	  	  img{
+
+	  	  	  	.rgt;
+	  	  	  	margin:0 0 0 8px;
+	  	  	  	
+
+	  	  	  }
+
+	  	  	  a{
+
+  					
+
+	  	  	  }
+
+	  	    } 
+
+
+	  	  }	 
+
+	  	  	   	 	  	 
 
 	  }
 
-}
+   }
 
+
+   div#mas{
+
+
+   	    .disp(block);   	    
+   	    .h(450px);
+   	    margin-top: 50px;
+   	    .pad(0);
+
+   	    .cont;	    
+
+
+   	    ul{
+
+   	    	 li{
+
+   	    	 	  .dim(33%,450px);
+   	    	 	  .lft;
+
+   	    	 	  .back(navy);
+
+   	    	 	  &:first-child{
+
+   	    	 	  	  .back(yellow);
+   	    	 	  	  .w(55%);
+
+   	    	 	  }
+
+   	    	 }
+
+   	    }
+
+   }
+
+
+
+// estilo a complementos  <<******************GOMOSOFT*************************>>>
 
 
 div.pop{
@@ -672,12 +776,13 @@ div.pop{
 	 .posi(fixed);
 	 left:0;
 	 .w(100%);	
-	 height: 200px;
+	 height: auto;
 	 .pad(20px 0);	 
 	 .zin(100000);	 	 
 	 cursor:default !important;	 
-	 bottom: -1000px;
-	.animar(all 1s); 
+	 bottom: -1300px;
+	
+	.animar(all 0.5s); 
 
 	 .wrap{
 
@@ -771,3 +876,109 @@ div.pop{
 
 
 
+
+.cargando{
+
+	.posi(absolute);
+	.wrap;
+	.dim(100%,100%);
+	z-index: 10000;	
+    top:0;
+    left:0;
+    .animar(all .5s);
+    .disp(none);
+
+	figure{
+
+	.posi(absolute);	
+	.pad(5px 20px);
+	.dim(80px,98px);
+	top:50%;
+	left:50%;	
+
+
+	 margin-top: -68px;
+	 margin-left: -60px;
+	 .disp(block);	
+
+			.lft;
+			
+
+			img{			
+
+				-webkit-animation-name: animar;
+   -webkit-animation-duration: 1.5s;
+   -webkit-animation-timing-function: lineal;
+   -webkit-animation-iteration-count:infinite;
+
+			}
+
+			span{
+
+				.disp(table);
+				.pad(3px 15px 3px 5px);							
+				color: #A0A0A0;
+				text-shadow: 0 1px 1px white, 1px 0 1px white, 0 1px 1px white, 0 1px 1px white;
+
+			}
+
+		}
+
+}
+
+@-webkit-keyframes animar{
+     0%  { } 
+     50% {  .rotate(all 1s,rotate(360deg) ); }
+     100% { .rotate(all 1s,rotate(0deg)); }
+}
+
+
+
+  div.lineas{
+
+  	  figure{
+
+  	  	  .posi(absolute);
+  	  	  .dim(0px,0px);
+  	  	  .disp(block);
+  	  	  .wrap;
+  	  	  .animar(all 1.2s);
+  	  	  .opac(0.60);
+
+
+  	  	  &.twitter{
+
+  	  	  	  left:22.5%;
+  	  	  	  top:66px;
+  	  	  	  .h(auto);
+
+  	  	  }
+
+  	  	  &.facebook{
+
+  	  	  	  left:11.5%;
+  	  	  	  top:50px;
+  	  	  	  .animar(all .8s);
+
+  	  	  }
+
+  	  	  &.twiC{
+
+  	  	  	 .w(452px);
+
+  	  	  }
+
+  	  	  &.fbC{
+
+  	  	  	  .dim(60px,74px);
+
+  	  	  }
+
+
+
+  	  }
+
+  }
+
+
+// ********************************************************************  estilos de componentes

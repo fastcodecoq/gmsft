@@ -29,7 +29,9 @@
 
 
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/less.js"></script>
+   <script type="text/javascript" src="js/less.js"></script>
+   <script type="text/javascript" src="js/modernizr.js"></script>   
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>   
    <script type="text/javascript" src="js/ControladorGmsft.js"> </script>
 
 
@@ -38,18 +40,18 @@
 
    <body id="main">
 
-         <header class="overHidden">
+         <header >
 
-              <div class="wrap"> 
+              <div class="w"> 
 
                     <figure id="logo-cab" style="margin:0 auto; margin-top:5px" class="lft">
-                       <img src="img/logo.png" alt="" width="200" />
+                      <a href="http://gomosoft.com#girar"> <img src="img/logo.png" alt="" width="200" /> </a>
                     </figure>
                
 
                    <nav id="menu" >
 
-                     <div class="wrap"> 
+                     <div class="w"> 
                      
                      <span class="visible-phone visible-tablet sp-menu">
                         
@@ -72,10 +74,10 @@
 
                          <li><a href="#1">WEB</a></li>
                          <li><a href="#2">SOFTWARE</a></li>
-                         <li><a href="#3">DESIGN</a></li>
-                         <li><a href="#4">BLOG</a></li>
-                         <li><a href="#5" >  LABS <!-- &nbsp;&nbsp;&nbsp; <i class="lab"></i> --></a></li>
-                         <li><a href="#6">Contacto</a></li>
+                         <li><a href="#3" rel="tooltip" title="Diseño">DESIGN</a></li>
+                         <li><a href="#4">HOSTING</a></li>
+                         <li><a href="#5" > LABS <!-- &nbsp;&nbsp;&nbsp; <i class="lab"></i> --></a></li>
+                         <li><a href="#contacto">Contacto</a></li>
 
                        </ul>
                      
@@ -92,13 +94,23 @@
    	    <div id="contenedorP">   	    	 
 
    	    		<section id="info">
+
+                  <div class="cargando">
+                  
+                  <figure>
+                      <img src="img/gomoB.png" alt="" width="80"/>
+                      <span>Cargando...</span>
+                 </figure>
+
+                  </div>
    	    				
 
                    <div class="wrap splash">
                        <!-- 
                     
                        <span class="listos hidden">Pronto estaremos listos y en línea...</span>
-                  -->
+                      
+                        -->
 
                     <div class="wrap">
                       
@@ -147,7 +159,11 @@
    	    </div>
 
           <footer>
-             
+
+            <div class="lineas">
+                  <figure class="twitter"> <img src="img/twiL.png" alt="" /></figure>
+                  <figure class="facebook"> <img src="img/fbL.png" alt="" /></figure>
+            </div>             
 
               <div class="wrap cont">
              
@@ -168,6 +184,12 @@
                                    <figure>
                                         <a href="#twitter">
                                             <img src="img/twi.png" alt="" />
+                                        </a>
+                                   </figure>
+
+                                   <figure>
+                                        <a href="https://github.com/gomosoft" target="_blank"  title="mira nuestro código en Github">
+                                            <img src="img/github.png" alt="" />
                                         </a>
                                    </figure>
 
@@ -236,16 +258,16 @@
 
    <ul class="wrap">
 
-    <li class="wrap lft" style="width:390px; height:300px">
+    <li class="wrap lft" style="width:390px;">
 
     <h1>Facebook</h1>
 
-<div class="fb-like-box" data-href="http://www.facebook.com/gomosoftweb" data-width="390" data-show-faces="true" data-stream="false" data-border-color="#ccc" data-header="false"></div>
+<div class="fb-like-box" data-href="http://www.facebook.com/gomosoftweb" data-width="292" data-height="313" data-show-faces="true" data-stream="false" data-border-color="#ccc" data-header="false"></div>
  
   </li>
       
 
-  <li class="wrap " style="width:300px; float:right; margin-right:100px;">
+  <li class="wrap twitter" style="width:300px; height:350px; float:right; margin-right:100px;">
 
    <h1>Twitter</h1>
  
@@ -263,15 +285,42 @@
          
            <figure class="lft"> 
             <a href="#cerrarFoot">
-               <img src="img/arrow.png" alt="" width="120" class="lft">
-               &nbsp; Volver
+               <img src="img/arrow.png" alt="" width="90" class="lft">
+               Volver
             </a>
             </figure>
 
      </div>
-    
 
-  </div>
+     <div class="wrap flecha abajo">           
+         
+           <figure class="lft"> 
+            <a href="#contacto">
+               <img src="img/arrowD.png" alt="" width="90" class="lft">
+              Conectarme  
+            </a>
+            </figure>
+
+     </div>
+
+
+
+     <div class="wrap" id="mas">
+
+
+        <ul>
+          
+           <li> 
+              contacto 
+           </li>
+
+           <li>
+             sliders
+          </li>
+
+        </li>
+
+   </div> 
 
 
           
@@ -301,12 +350,18 @@
      </div>
 
    </div>
+
  
       
 
    	     <script type="text/javascript">
          
-         less.watch();  
+             less.watch();  
+             Modernizr.load();
+
+             var mod = Modernizr;
+
+             console.log(Modernizr);
 
             </script>  
 
