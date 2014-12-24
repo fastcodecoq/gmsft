@@ -1,3 +1,5 @@
+
 pro/
+customers/
 *.zip
 sftp-config.json
