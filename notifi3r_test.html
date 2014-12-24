@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="notifi3r">
+  <head ng-controller='pageInfoCtrl'>
+    <meta charset="utf-8">
+         <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta http-equiv="cleartype" content="on">
+    <title ng-cloak>{{page.title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <body ng-cloak>
+
+
+  <section style="display:table; max-width:720px; width:95%; margin:0 auto; min-width:310px">
+
+  <h1>Notifi3r Tester</h1>
+
+   <div ng-controller='configCtrl'>
+   <input type="text" ng-model='serverUrl' value="{{serverUrl}}" placeholder="Ingrese la url del servicio a Testear">
+   </div>
+
+<div ng-controller="usersCtrl">
+
+<div  >
+
+   <br >
+   <br >
+  <form ng-model="userForm" ng-submit="register()">
+    <h3>Register Device</h3>
+
+   <input type="text" ng-model="userForm.user_id" placeholder="user id"><br /><br />
+   <input type="text" ng-model="userForm.device_id" placeholder="device id"><br /><br />
+  <span>Platform:</span>&nbsp; <select ng-model="userForm.device_platform">
+          <option value='' selected>OS</option>
+          <option value="android">Android</option>
+          <option value="iOS">iOS</option>
+        </select>
+       <br /><br />
+   <input type="submit" value="register" class="secondary button pure-button">
+  </form>
+
+  </div>
+  <br />
+
+  <br />
+
+    <form ng-model="notificationForm" ng-submit="sendNotifications()">
+    <h3>Send Notifications</h3>
+     <small>
+
+   <textarea class="animate msd-elastic: \n;" ng-model="notificationForm.message" placeholder="Write a message..."></textarea><br /><br />   
+   <input type="submit" value="send" class="pure-button" ng-model="sendEnable"  ng-disabled="sendEnable">
+
+   <br />
+   <br />
+   <small style="display:block">To send notifications, you must select least one user from the list bellow.</small>
+  </form>
+
+
+  <br />
+
+  <br />
+
+      <table class="pure-table">
+      <thead>
+             <tr style="padding:20px 0">
+        <td>
+        <table>
+        <tr>
+        <td>Filter user id: </td>
+        <td><input type="text" ng-model='filtro.user_id' placeholder="User id"></td>
+        </tr> 
+        <tr>
+        <td>Filter device id: </td>
+        <td><input type="text"   ng-model='filtro.device_id' placeholder="Device id "></td>         
+        </tr> 
+        <tr>
+        <td>Filter device platform: </td><td>
+        <select ng-model='filtro.device_platform'>
+          <option value='' selected>all</option>
+          <option value="android">Android</option>
+          <option value="iOS">iOS</option>
+        </select>
+        </td>
+           </tr>    
+        </table>
+        </td>
+        
+        </tr>
+        
+      </thead>
+      <tbody >
+
+      <tr>
+
+      <td>
+      <br />
+      <br />
+   
+   <div class="table-container">
+      <table class="pure-table">
+
+      <thead>
+          <tr>
+             <td><input type="checkbox" ng-model="all" ng-init="false"></td>
+              <td>User id</td>
+              <td>Device id</td>
+              <td>Device Platform</td>
+              <td>Android ARN</td>
+              <td>X</td>
+          </tr>
+          </thead>
+          <tbody>
+ 
+        <tr ng-model="users"  ng-repeat='user in users | filter:filtro'>
+         <td><input type="checkbox"  ng-checked='all' ng-model='anUser' ng-init='false'  ng-change="check(a)"/></td>        
+         <td >{{user.user_id}}</td>
+         <td >{{user.device_id}}</td>
+         <td >{{user.device_platform}}</td>
+         <td >{{user.endpointArn}}</td>         
+         <td ><a href='' ng-click='del()'>X</a></td>
+         </tr>
+        </tbody>
+      </table>
+
+      </div>
+
+      </td>
+
+      </tr>
+
+
+       
+        </tbody>
+      </table>
+
+      </div>
+  </section>
+
+<br />
+<br />
+<br />
+    
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+   <script type="text/javascript" src="elastic.js"></script>
+   <script type="text/javascript" src="angular-scrollable-table.min.js"></script>
+   <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

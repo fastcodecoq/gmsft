@@ -1,0 +1,341 @@
+<div class="shadow"></div>
+    
+    <header>
+      <div class="wrapper">
+         <div id="logo" class="table lft" >
+         	<figure >
+            <a href="home" data-target="#home" data-scroller>
+            <figure class="logo-sprite"></figure>            
+            </a>
+          </figure>
+         	<h1 class="ninja">gomosoft - diseño web y aplicaciones moviles</span>
+         </div>
+         <div class="table rgt">
+            <navbar id="menu" class="visible-desktop">
+            
+    <nav> <a href="what-we-do" data-target="#what-we-do" data-scroller><%= what_we_do %></a> </nav>             
+    <nav><a href="portfolio" data-target="#portfolio" data-scroller><%= portfolio %></a> </nav>   
+    <nav> <a href="why-us" data-target="#why-us" data-scroller><%= why_us %></a> </nav>
+    <nav> <a href="contact-us" data-target="#contact-us" data-scroller><%= contact_us %></a> </nav>
+        <nav> <a href="http://gomosoft.pro/blog/noticias" target="_blank"><%= blog %></a> </nav>
+            </navbar>
+         </div>
+      </div>
+    </header>
+
+
+    <div id="container">
+
+       <section class="blck nobg no-padding-bottom visible-desktop" id="home">
+       <video class="visible-desktop"  height="520" style="position:absolute; top:0; left:0; width:100%" preload="true" autoplay="true" loop="true"><source src="http://dn0tr4q7yo86c.cloudfront.net/videos/backgrounds/background.webm" type="video/webm"> <source src="http://dn0tr4q7yo86c.cloudfront.net/videos/backgrounds/background.mp4" type="video/mp4"> </video>
+          <div class="wrapper relative ninja">
+          	<article>
+          	 <hgroup>
+          	   <h2 class="tblack" style="color: whitesmoke;"><%= homeslidertitle %></h2>
+          	  <h3 class="title-padded" style="color: gainsboro;"><%= homeslidersubtile %></h3>
+          	</hgroup>
+          	  <br>
+          	  <br>
+          	  <div style="margin-top:5px"><figure class=" sprite-slider toCenter" style="height:120px"></figure></div>
+          	  <p class="ninja">we make websites, apps, mobiles apps</p>
+          	</article>
+          </div>
+       </section>
+
+       <section class="blck" id="what-we-do">
+          <div class="wrapper">
+          	 <article>
+          	 <h2><%= what_we_do %></h2>
+          	 		<br>
+          	 		<br>
+                <br>
+          	 		<br>
+
+          	 <navbar id="whats" class="clearfix">
+          	 	<nav class="column">
+          	 		<div class="circle relative " >
+          	 		 <figure class="sprite sprite-mobiles"></figure> 
+                    <div class="globe" style="left: 40px;top: -79px;">
+        <span><%= mobile_description %></span>
+      </div>         	 			
+          	 		</div>
+          	 		<br>
+          	 		<br>
+          	 		<span class="hyphenate"><%= mobileapps %></span>
+
+          	 	</nav>
+          	 	 	<nav class="column">
+          	 		<div class="circle relative" >
+          	 		 <figure class="sprite sprite-desktop"></figure> 
+                  <div class="globe" style="left: 86px; top: -105px;">
+        <span class="hyphenate"><%= desktop_description %></span>
+      </div>         	 			
+          	 		</div>
+          	 		<br>
+          	 		<br>
+          	 		<span><%= desktopapps %></span>
+
+          	 	</nav>
+          	 	 	<nav class="column">
+          	 		<div class="circle relative " >
+          	 		 <figure class="sprite sprite-webapps"></figure>
+                    <div class="globe" style="left: 43px; top: -88px;">
+        <span class="hyphenate"><%= webapps_description %></span>
+      </div>            	 			
+          	 		</div>
+          	 		<br>
+          	 		<br>
+          	 		<span><%= webapps %></span>
+
+          	 	</nav>
+          	 	 	<nav class="column">
+          	 		<div class="circle relative" >
+          	 		 <figure class="sprite sprite-websites"></figure>          	 			
+                    <div class="globe side" style="left: -120px;top: -112px;">
+        <span class="hyphenate"><%= web_description %></span>
+      </div> 
+          	 		</div>
+          	 		<br>
+          	 		<br>
+          	 		<span><%= websites %></span>
+
+          	 	</nav>
+          	 	<p class="ninja">apps mobiles, desktop apps, web apps, web sites</p>
+          	 </article>
+          	 </navbar>
+     
+          </div>
+       </section>
+
+       <section class="blck gray" id="portfolio">
+          <div class="wrapper">
+          	<article>
+          	 <h2><%= portfolio %></h2>
+          	 <br>
+          	 <br>
+          	 <br>
+          	 <br>
+          	 <div class="portfolio">
+          	 	<navbar class="controls toCenter clearfix visible-desktop">
+          	 		 <nav><a href="/web" rel="nofollow" class="active" data-portfolio-control><%= websites %></a></nav>
+          	 		 <nav><a href="/apps" rel="nofollow" data-portfolio-control><%= apps %></a></nav>
+          	 		 <nav><a href="/design" rel="nofollow" data-portfolio-control><%= design %></a></nav>
+          	 	</navbar>
+              <select data-vibrate class="visible-mobile visible-tablet column cute-select" onchange="loadPortafolio(this.value)">
+                 <option value="web"><%= websites %></option>
+                 <option value="apps"><%= apps %></option>
+                 <option value="design"><%= design %></option>
+              </select>
+          	 	<br>
+          	 	<br>
+          	 	<br>
+          	 	<div class="items clearfix">
+              
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+
+
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+
+
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+
+          	 		<div class="item">
+          	 			<figure></figure>
+          	 			<span class="over"></span>
+          	 		</div>
+          	 	</div>
+          	 </div>
+          	 	<p class="ninja">web sites, apps, design</p>
+
+    </article>
+          </div>
+       </section>
+
+
+         <section class="blck visible-desktop" id="why-us">
+          <div class="wrapper">
+          	 <h2 class="hsmooth"><%= why_us %></h2>
+          	 <br>
+          	 <br>
+          	 <br>
+
+ <p class="prgh hyphenate" lang="es">
+ 	 <%= why_us_text %>
+          	 <br>
+  <br>
+ 	<br>
+         
+          	</p>
+          		<br>
+          	<br>
+          	<br>
+          	  <div class="testimonials toCenter">    
+          	  <span class="ubuntu medium"><%= testimonials %></span>
+          	  <br>      	  	
+          	  <br>      	  	
+         	  	
+          	  	
+          	  		<table class="toCenter">
+          	  			<tr>
+          	  				<td>
+          	  					<div class="circlee" style="background-image: url(assets/img/testimonials.jpg);">
+          	  			&nbsp;
+          	  		</div> 
+          	  				</td>
+          	  				<td class="ubuntu gray medium" style="width:607px; padding:5px; padding-left:23px">
+          	  					<br>
+          	  						<span class="msg"  >
+          	  				"<span class="content">Working with Gomosoft is a really confortable experience, thanks for all. Great work on castlewayproductions.com</span> ".
+          	  			</span>
+                    <br>
+                    <br>
+          	  			<span class="by">
+          	  				 &nbsp;Linnie Morgan.
+          	  			</span>
+          	  				</td>
+          	  			</tr>
+          	  		</table>          	  		             	  
+
+          
+          	  </div>
+          	<br>
+          	<br>
+          	<br>
+          	<br>
+          	<br>
+          	<br>
+
+        <span class="full ubuntu medium tlc bluet"><%= we_make %></span>
+          	<br>
+          	<br>
+          	<br>
+          	<figure class="sprite sprite-lenguajes"></figure>
+                            
+
+          </div>
+       </section>
+
+
+       <section class="blck gray" id="contact-us">
+          	 <h2><%= contact_us %></h2>
+          	 <br>
+             <br>
+             <p class="prgh inter toCenter" style="width: 914px; text-align:center">
+   <%= contact_text %>
+             </p>
+          	 <br>
+             <br>
+          	 <br>
+          	 <div class="sprite sprite-carta toCenter">
+          	 	<form id="quote">
+          	 		 <div class="label column">
+          	 		 	<span><%= name %></span>
+          	 		 	<input type="text" name="name" spellcheck="false">
+          	 		 	<br>
+          	 		 	<br>
+          	 		 	<br>
+          	 		 	<span><%= email %></span>
+          	 		 	<input type="email" name="email" spellcheck="false">
+          	 		 	<br>
+          	 		 	<br>
+          	 		 	<br>
+          	 		 	<span><%= telephone %></span>
+          	 		 	<input type="text" name="tel" spellcheck="false">
+          	 		 </div>
+          	 		 <div class="label column">
+          	 		 	<span><%= message %></span>
+          	 		 	<div>          	 		 		
+          	 		 		<textarea name="message" placeholder="..."></textarea>
+          	 		 		<button class="arial" style="font-size:15pt" data-vibrate><%= send %></button>
+          	 		 	</div>
+          	 		 </div>
+          	 	</form>
+          	 </div>
+          </div>
+       </section>
+
+    </div>
+  	
+  	<footer class="blck">
+  		<div class="wrapper">
+  			<span class="full tlc arial normal "><%= find_us %></span>  			
+  			<br>
+  			<br>
+  			<navbar class="inlinee toCenter">
+  				<nav>
+  					<a href="//github.com/gomosoft" class="nounder" target="_blank"><figure class="sprite sprite-github"></figure></a>
+  				</nav>
+  				&nbsp;
+  				&nbsp;
+  				&nbsp;
+  				<nav>
+  					<a href="//facebook.com/gomosoftweb" class="nounder" target="_blank"><figure class="sprite sprite-fb"></figure></a>
+  				</nav>
+&nbsp;
+  				&nbsp;
+  				&nbsp;
+  				<nav>
+  					<a href="//twitter.com/gomosoft" class="nounder" target="_blank"><figure class="sprite sprite-tw"></figure></a>
+  				</nav>
+  			</navbar>
+<br>
+<br>
+<br>
+         <div>
+              <span class="full tlc arial normal "><%= certified %></span>        
+        <br>
+        
+        <navbar class="inlinee toCenter">          
+          <nav>
+             <figure class="sprite-cert sprite-certifications"></figure>
+          </nav>
+        </navbar>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+              <span class="full tlc arial normal "><%= read_in %></span>        
+        <br>
+        
+        <navbar class="inlinee toCenter">          
+          <nav>
+            <a href="/en"  class="arial normal gray nounder" data-to="en" data-change-language><%= english %></a>
+          </nav>
+          &nbsp;
+          &nbsp;          
+          <nav>
+      <a href="/es"  class="arial normal gray nounder" data-to="es" data-change-language><%= spanish %></a>
+          </nav>
+              &nbsp;
+          &nbsp;          
+          <nav>
+      <a href="/fr"  class="arial normal gray nounder" data-to="fr" data-change-language><%= francois %></a>
+          </nav>
+        </navbar>
+        </div>
+        <br>
+        <br>
+        <br>
+        <span class="full tlc ubuntu medium" style="color:black"><%= copyrights %> <%= year %></span>
+  		</div>
+  	</footer>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="parser">
+ <head lang="es-CO">
+ 	<meta charset="utf-8">
+ 	 <title>Parsear</title>
+ 	 <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="animate.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+ 	 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+
+ </head>
+ 
+
+ <body ng-controller="parserCtrl">
+     <div class="container">
+     	 <h2>Parsear Información</h2>
+     	 <br>
+         <form class="row" ng-submit="parsea()">
+         	<div class="col-md-12">
+         	<textarea id="texto" name="text" class="col-md-12 block" style="display:block; height:320px; margin-bottom:20px"></textarea>
+         	<br>
+         	<br>
+         	<br>
+         	<br>
+         	<button class="btn btn-danger btn-lg col-md-5 animated bounceIn" ng-click="decir('mucho')">Dime algo</button>
+         	<button class="btn btn-primary btn-lg  col-md-5 pull-right animated bounceIn">Parsear</button>
+         </div>
+         </form>
+         <br>
+         <br>
+         <h3 style="background: rgb(139, 194, 253);
+color: fuchsia;
+padding: 27px;
+line-height: 1.5;" class="{{ s_msg ? 'visible': 'hidden' }}">{{msg}}</h3>
+	
+	<div class="row animated  {{ resulted ? 'slideInLeft': 'hidden' }}">
+		<h3 class="col-md-5">Total items: {{items}}</h3>
+
+  <div class="col-md-5 pull-right ">
+		<a class="btn btn-success btn-lg pull-right" download="gust.xls" type="button" onclick="return ExcellentExport.excel(this, 'result', 'publicidad')"  class="btn btn-success pull-right">Descargar</a>
+	</div>
+	  </div>
+<br>
+<br>
+		<table class="table table-striped row animated {{ resulted ? 'fadeIn' : 'hidden' }} " id="result">
+			<thead>
+				 <tr>
+				 	<td>Nombre</td>
+				 	<td>Fecha Cumpleaños</td>
+				 	<td>N. Celular</td>
+				 	<td>Direccion</td>
+				 	<td>Tipo Vehículo</td>
+				 	<td>Placa</td>
+				 	<td>Referencia</td>
+				 </tr>				 
+			</thead>
+			<tbody>
+				 <tr ng-repeat="item in ads">
+				 	  <td>{{item.nombre}}</td>
+				 	  <td>{{item.fechac}}</td>
+				 	  <td>{{item.celular}}</td>
+				 	  <td>{{item.dir}}</td>
+				 	  <td>{{item.tipo}}</td>
+				 	  <td>{{item.placa}}</td>
+				 	  <td>{{item.ref}}</td>
+				 	<tr>
+			</tbody>
+		</table>
+
+		<br>
+		<br>
+     </div>
+ </body>
+
+
+  <script type="text/javascript">
+
+     var app = angular.module('parser', []);
+
+     app.controller('parserCtrl', function($scope, $http){
+
+     		$scope.msg = "";     		
+     	    console.log("ready");
+     	    $scope.ctrl = 0;
+     	    $scope.ads = new Array();
+
+
+     	    $scope.decir = function(pos){
+            
+            $scope.s_msg = true;
+     	    	  
+             if($scope.ctrl === 0)
+     	    	  $scope.msg = "Te quiero " + pos;
+     	     else if($scope.ctrl < 10)
+     	     	  $scope.msg = $scope.msg + " " + pos;
+     	     else if($scope.ctrl < 20)     	     
+     	     	  $scope.msg = $scope.msg + " " + "muchisimo";
+     	     else if($scope.ctrl <= 20)     	     
+     	     	  $scope.msg = $scope.msg + " " + "mi reina hermosa. Y YO TAMBIEN GUUUUUUUAUUUUU!";
+
+     	    	  $scope.ctrl++;
+
+     	    }
+
+
+     	    $scope.parsea = function(){
+
+ 					$scope.resulted = false;
+
+     	    	    var texto = document.getElementById('texto').value;
+
+     	    	    texto = texto.split('\n');     	    	    
+     	    	    console.log(texto);
+     	    	    var i = 0 ;
+     	    	    var item = {};  
+     	    	    $scope.ads = [];
+     	    	    $scope.items = 0;   	    	    
+     	    	    var map = ['nombre', 'fechac', 'celular', 'dir', 'tipo', 'placa', 'ref'];
+
+
+     	    	    for(x in texto)
+     	    	    	if(texto[x].split(':').length > 1)
+     	    	    	{
+
+     	    	    		item[map[i]] = texto[x].split(':')[1];
+ 						   	 						   
+
+ 						   	if(i === 6)
+ 						   		{
+ 						   		console.log(item);
+ 						   		 $scope.ads.push(item);
+ 						   		 $scope.items = $scope.ads.length;
+ 						   		 i = 0;
+ 						   		 item = {};
+ 						   		}
+
+ 						   		i++;
+     	    	    	}else
+ 						   		 i = 0;
+
+ 				  $scope.resulted = texto.length > 0 ? true : false;
+
+
+    };
+
+     	    
+
+     });
+
+
+
+var tableToExcel = (function() {
+  var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+    , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+  return function(table, name) {
+    if (!table.nodeType) table = document.getElementById(table)
+    var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+    window.location.href = uri + base64(format(template, ctx))
+  }
+})()
+
+
+var n=String.fromCharCode,p;a:{try{document.createElement("$")}catch(q){p=q;break a}p=void 0} window.btoa||(window.btoa=function(c){for(var g,d,f,a,e,b,k=0,r=c.length,m=Math.max,h="";k<r;){g=c.charCodeAt(k++)||0;d=c.charCodeAt(k++)||0;b=c.charCodeAt(k++)||0;if(255<m(g,d,b))throw p;f=g>>2&63;g=(g&3)<<4|d>>4&15;a=(d&15)<<2|b>>6&3;e=b&63;d?b||(e=64):a=e=64;h+="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(f)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(g)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(a)+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".charAt(e)}return h}); window.atob||(window.atob=function(c){c=c.replace(/=+$/,"");var g,d,f,a,e=0,b=c.length,k=[];if(1===b%4)throw p;for(;e<b;)g="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(c.charAt(e++)),d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(c.charAt(e++)),f="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(c.charAt(e++)),a="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(c.charAt(e++)),g=(g&63)<< 2|d>>4&3,d=(d&15)<<4|f>>2&15,f=(f&3)<<6|a&63,k.push(n(g)),d&&k.push(n(d)),f&&k.push(n(f));return k.join("")}); ExcellentExport=function(){function c(f,a){return f.replace(/{(\w+)}/g,function(e,b){return a[b]})}var g={excel:"data:application/vnd.ms-excel;base64,",csv:"data:application/csv;base64,"},d={excel:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">\x3c!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--\x3e</head><body><table>{table}</table></body></html>'};return{excel:function(f, a,e){a=a.nodeType?a:document.getElementById(a);var b=g.excel;a=c(d.excel,{a:e||"Worksheet",table:a.innerHTML});a=window.btoa(unescape(encodeURIComponent(a)));f.href=b+a;return!0},csv:function(f,a){for(var e=a=a.nodeType?a:document.getElementById(a),b="",c=0,d;d=e.rows[c];c++){for(var m=0,h;h=d.cells[m];m++){var b=b+(m?",":""),l=h.innerHTML;h=l;var s=-1!==l.indexOf(",")||-1!==l.indexOf("\r")||-1!==l.indexOf("\n");(l=-1!==l.indexOf('"'))&&(h=h.replace(/"/g,'""'));if(s||l)h='"'+h+'"';b+=h}b+="\r\n"}e= g.csv+window.btoa(unescape(encodeURIComponent(b)));f.href=e;return!0}}}();
+
+  </script>
+
+</html>
