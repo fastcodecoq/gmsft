@@ -1,5 +1,6 @@
 
 pro/
 customers/
+olimpicapp/
 *.zip
 sftp-config.json
